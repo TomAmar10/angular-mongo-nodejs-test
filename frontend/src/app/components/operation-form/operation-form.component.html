@@ -1,0 +1,51 @@
+<div class="form-container">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <h1>{{ paramsId ? "Edit Operation" : "Add New Operation" }}</h1>
+    <span class="error-msg" *ngIf="!isValid">please fill all details</span>
+    <div>
+      <label>Type:</label>
+      <select
+        formControlName="type"
+        #userType
+        (change)="typeChange(userType.value)"
+      >
+        <option [ngValue]="null" disabled>choose type</option>
+        <option *ngFor="let item of types" [ngValue]="item" #userType>
+          {{ item }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label>Amount:</label>
+      <input type="number" formControlName="amount" (change)="validate()" />
+    </div>
+    <div>
+      <label>account:</label>
+      <select formControlName="account" (change)="validate()">
+        <option [ngValue]="null" disabled>choose account</option>
+        <option *ngFor="let item of accounts$ | async" [ngValue]="item._id">
+          {{ item.number }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label>Created:</label>
+      <input
+        type="datetime-local"
+        formControlName="created"
+        (change)="validate()"
+      />
+    </div>
+    <div *ngIf="currType === 'loan'">
+      <label>Interest:</label>
+      <input type="number" formControlName="interest" />
+    </div>
+    <div *ngIf="currType === 'loan'">
+      <label>Payments:</label>
+      <input type="number" formControlName="payments" />
+    </div>
+    <div class="submit-btn">
+      <button>{{ paramsId ? "Save" : "Add" }}</button>
+    </div>
+  </form>
+</div>

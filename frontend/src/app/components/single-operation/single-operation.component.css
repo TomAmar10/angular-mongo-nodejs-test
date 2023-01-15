@@ -1,0 +1,45 @@
+.operation-box {
+  width: 18rem;
+  border: 3px black solid;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgb(70, 21, 5);
+  font-size: 1.1rem;
+}
+.operation-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.operation-box-header span {
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  margin-left: -1.5rem;
+  cursor: pointer;
+}
+.delete {
+  margin-top: -1rem;
+}
+.edit {
+  margin-top: 0.7rem;
+}
+.operation-box-header span:hover {
+  font-size: 1.3rem;
+}
+
+.operation-box > div > div {
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+label {
+  text-decoration: underline;
+}

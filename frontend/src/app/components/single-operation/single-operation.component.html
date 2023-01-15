@@ -1,0 +1,33 @@
+<div class="operation-box">
+  <div class="operation-box-header">
+    <h2>Account {{ operation?.account.number }}</h2>
+    <div>
+      <span class="delete" (click)="onDelete()">❌</span>
+      <span class="edit" (click)="editClick()">✏️</span>
+    </div>
+  </div>
+  <div>
+    <div>
+      <label>Created:</label>
+      <span>{{ operation?.created | date }}</span>
+    </div>
+    <div>
+      <label>Operation Type:</label>
+      <span>{{ operation?.type }}</span>
+    </div>
+    <div>
+      <label>Amount:</label>
+      <span>{{ operation?.amount }} $</span>
+    </div>
+    <div>
+      <label>Interest:</label>
+      <span>{{
+        operation.type === "loan" ? operation?.interest + " $" : "---"
+      }}</span>
+    </div>
+    <div>
+      <label>Payments:</label>
+      <span>{{ operation.type === "loan" ? operation?.payments : "---" }}</span>
+    </div>
+  </div>
+</div>

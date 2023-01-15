@@ -1,0 +1,17 @@
+<div class="main-page">
+  <div class="account-search">
+    <input
+      type="number"
+      #account
+      placeholder="search by account"
+      maxlength="4"
+    />
+    <button (click)="search(account.value)">search</button>
+  </div>
+  <div class="operations-container">
+    <app-single-operation
+      *ngFor="let item of operations$ | async"
+      [operation]="item"
+    ></app-single-operation>
+  </div>
+</div>

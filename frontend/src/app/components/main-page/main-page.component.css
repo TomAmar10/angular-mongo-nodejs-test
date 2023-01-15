@@ -1,0 +1,33 @@
+.main-page {
+  padding: 2rem 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-search {
+  margin-bottom: 2rem;
+}
+.operations-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+input, button{
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.1rem;
+  outline: 1px white solid;
+}
+button{
+  cursor: pointer;
+  margin-left: 1rem;
+  background-color: rgb(4, 107, 4);
+  color: white;
+}
+button:hover{
+  padding: 0.2rem 1.1rem;
+  background-color: rgb(9, 125, 9);
+}
